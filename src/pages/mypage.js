@@ -3,32 +3,35 @@ import { useInput } from "../hooks/useInput";
 import { Introduce } from "../styles/mypageStyle";
 import axios from "axios";
 
-const baseUrl = "https://jsonplaceholder.typicode.com";
+// const baseUrl = "https://jsonplaceholder.typicode.com";
 
 const popupMessege = (messege) => {
   alert(messege);
 };
 
-const Mypage = (type) => {
+const Mypage = () => {
   const [inputValue, handleChange, handleSubmit] = useInput("", popupMessege);
   // const [inputValue2, handleChange2] = useInput("123");
 
-  const [data, setData] = useState(null);
+  // let [data, setData] = useState([]);
 
-  const axiosUrl = () => {
-    axios
-      .get(baseUrl + "/" + type)
-      .then((e) => {
-        console.log(e);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  };
+  // const axiosUrl = (type) => {
+  //   axios
+  //     .get(baseUrl + "/" + type)
+  //     .then((e) => {
+  //       let a = [...e.data];
+  //       console.log(a);
+  //       setData([...a]);
+  //       console.log("data : ", data);
+  //     })
+  //     .catch((e) => {
+  //       console.log(e);
+  //     });
+  // };
 
-  useEffect(() => {
-    axiosUrl("users");
-  }, []);
+  // useEffect(() => {
+  //   axiosUrl("users");
+  // }, []);
 
   return (
     <>
@@ -39,7 +42,29 @@ const Mypage = (type) => {
       {/* <input type={"text"} value={inputValue2} onChange={handleChange2} /> */}
       <button onClick={handleSubmit}>ddd</button>
       <br />
-      <h2>useAxios</h2>
+      {/* <h2>useAxios</h2>
+      <button
+        onClick={() => {
+          axiosUrl("users");
+        }}
+      >
+        Users
+      </button>
+      <button
+        onClick={() => {
+          axiosUrl("posts");
+        }}
+      >
+        Posts
+      </button>
+      <button
+        onClick={() => {
+          axiosUrl("todos");
+        }}
+      >
+        Todos
+      </button>
+      <pre>{data}</pre> */}
     </>
   );
 };

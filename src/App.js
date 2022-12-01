@@ -1,6 +1,7 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Mypage from "./pages/mypage";
-import Main from "./pages/main";
+import Mypage from "./pages/Mypage";
+import Main from "./pages/Main";
+import Axios from "./pages/Axios";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />}></Route>
         <Route path="/mypage" element={<Mypage />}></Route>
+        <Route path="/axios" element={<Axios />}></Route>
       </Routes>
     </BrowserRouter>
   );
